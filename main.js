@@ -1,38 +1,39 @@
 // Find a check to always make cost negative and revenue positive
 // Rename function to projectRevenue
 const revenuePos = (arr) => {
-    let checkedArr = [];
-    for(let i = 0; i < arr.length; i++) {
-        if(arr[i] < 0) {
-            checkedArr[i] = arr[i] * -1;
-        } else {
-            checkedArr[i] = arr[i];
-        }
-    } return checkedArr;
+  let checkedArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < 0) {
+      checkedArr[i] = arr[i] * -1;
+    } else {
+      checkedArr[i] = arr[i];
+    }
+  }
+  return checkedArr;
 };
 console.log(revenuePos([-10000, -10000, 5000, -5000, -2000]));
 
 // Rename function to projectCost
 const costNegative = (arr) => {
-    let checkedArr = [];
-    for(let i = 0; i < arr.length; i++) {
-        if(arr[i] > 0) {
-            checkedArr[i] = arr[i] * -1;
-        } else {
-            checkedArr[i] = arr[i];
-        }
-    } return checkedArr;
+  let checkedArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 0) {
+      checkedArr[i] = arr[i] * -1;
+    } else {
+      checkedArr[i] = arr[i];
+    }
+  }
+  return checkedArr;
 };
 console.log(costNegative([10000, -10000, 5000, 5000, -2000]));
 
 // Rename function to initialCost
 const initialCostNegative = (cost) => {
-    if (cost > 0) { 
-        return cost * -1; 
-    }
-    else { 
-        return cost; 
-    }
+  if (cost > 0) {
+    return cost * -1;
+  } else {
+    return cost;
+  }
 };
 console.log(initialCostNegative(-100000));
 
@@ -50,21 +51,23 @@ const projectCost = [-15000, -15000, -15000, -15000, -15000];
 
 // NPV Formula
 const npvFormula = (arr1, arr2) => {
-    let sum = [];
-    let discountRate = 0.045;
-    let period = [1, 2, 3, 4, 5];
+  let sum = [];
+  let discountRate = 0.045;
+  let period = [1, 2, 3, 4, 5];
 
-    for(let i = 0; i < Math.max(arr1.length, arr2.length); i++) {
-        sum.push(arr1[i] + arr2[i]);
-    }
-    let = sumOfDiscount = [];
+  for (let i = 0; i < Math.max(arr1.length, arr2.length); i++) {
+    sum.push(arr1[i] + arr2[i]);
+  }
+  let = sumOfDiscount = [];
 
-    for(let i = 0; i < Math.max(sum.length, period.length); i++) {
-        sumOfDiscount.push(sum[i] / Math.pow((1 + discountRate), period[i]));
-    }
-    return sumOfDiscount = sumOfDiscount.reduce((accumulator, currentValue) => {
-        return accumulator + currentValue
-      }, 0) + initialCost;
+  for (let i = 0; i < Math.max(sum.length, period.length); i++) {
+    sumOfDiscount.push(sum[i] / Math.pow(1 + discountRate, period[i]));
+  }
+  
+  return (sumOfDiscount =
+    sumOfDiscount.reduce((accumulator, currentValue) => {
+      return accumulator + currentValue;
+    }, 0) + initialCost);
 };
 console.log(npvFormula(projectRevenue, projectCost));
 
@@ -80,7 +83,6 @@ console.log(npvFormula(projectRevenue, projectCost));
 // }
 // console.log(discountedCashFlow(totalProfit(projectRevenue, projectCost), npvDenominator(discountRate, period)));
 
-
 // Create NPV function
 // const npv = (initialCost, discountedCashFlow) => {
 //     return initialCost + discountedCashFlow;
@@ -88,6 +90,4 @@ console.log(npvFormula(projectRevenue, projectCost));
 // console.log(npv(initialCost, discountedCashFlow(totalProfit(projectRevenue, projectCost), npvDenominator(discountRate, period))));
 
 // Need to add metrics for ICE eval
-const iceRating = (npv, initialCost, projectCost) => {
-
-};
+const iceRating = (npv, initialCost, projectCost) => {};
