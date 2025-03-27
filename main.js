@@ -1,3 +1,41 @@
+// Find a check to always make cost negative and revenue positive
+// Rename function to projectRevenue
+const revenuePos = (arr) => {
+    let checkedArr = [];
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] < 0) {
+            checkedArr[i] = arr[i] * -1;
+        } else {
+            checkedArr[i] = arr[i];
+        }
+    } return checkedArr;
+};
+console.log(revenuePos([-10000, -10000, 5000, -5000, -2000]));
+
+// Rename function to projectCost
+const costNegative = (arr) => {
+    let checkedArr = [];
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] > 0) {
+            checkedArr[i] = arr[i] * -1;
+        } else {
+            checkedArr[i] = arr[i];
+        }
+    } return checkedArr;
+};
+console.log(costNegative([10000, -10000, 5000, 5000, -2000]));
+
+// Rename function to initialCost
+const initialCostNegative = (cost) => {
+    if (cost > 0) { 
+        return cost * -1; 
+    }
+    else { 
+        return cost; 
+    }
+};
+console.log(initialCostNegative(-100000));
+
 // Create variance for initial cost
 const initialCost = -100000;
 
@@ -7,7 +45,6 @@ const initialCost = -100000;
 // const period = 5;
 
 // Table arrays
-// Find a check to always make cost negative and revenue positive
 const projectRevenue = [30000, 30000, 30000, 30000, 30000];
 const projectCost = [-15000, -15000, -15000, -15000, -15000];
 
