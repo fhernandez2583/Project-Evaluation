@@ -1,5 +1,5 @@
 // Create variance for initial cost
-const initialCost = 100;
+const initialCost = -100000;
 
 // Create Discount Rate
 const discountRate = 0.045;
@@ -8,8 +8,8 @@ const discountRate = 0.045;
 const period = 5;
 
 // Table arrays
-const projectRevenue = [2, 3, 4, 5, 6];
-const projectCost = [5, 3, 7, 2, 1];
+const projectRevenue = [30000, 30000, 30000, 30000, 30000];
+const projectCost = [-15000, -15000, -15000, -15000, -15000];
 const totalProfit = (arr1, arr2) => {
     let sum = [];
     for(let i = 0; i < Math.max(arr1.length, arr2.length); i++) {
@@ -19,3 +19,22 @@ const totalProfit = (arr1, arr2) => {
       }, 0);
 };
 console.log(totalProfit(projectRevenue, projectCost));
+
+// Create NPV Denominator
+const npvDenominator = (discountRate, period) => {
+    return Math.pow((1 + discountRate), period);
+}
+console.log(npvDenominator(discountRate, period));
+
+// Create Discounted amount
+const discountedCashFlow = (totalProfit, npvDenominator) => {
+    return totalProfit / npvDenominator;
+}
+console.log(discountedCashFlow(totalProfit(projectRevenue, projectCost), npvDenominator(discountRate, period)));
+
+
+// Create NPV function
+const npv = (initialCost, discountedCashFlow) => {
+    return initialCost + discountedCashFlow;
+}
+console.log(npv(initialCost, discountedCashFlow(totalProfit(projectRevenue, projectCost), npvDenominator(discountRate, period))));
