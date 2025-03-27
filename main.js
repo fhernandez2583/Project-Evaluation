@@ -18,7 +18,7 @@ const totalProfit = (arr1, arr2) => {
         return accumulator + currentValue
       }, 0);
 };
-console.log(totalProfit(projectRevenue, projectCost));
+// console.log(totalProfit(projectRevenue, projectCost));
 
 // Create NPV Denominator
 const npvDenominator = (discountRate, period) => {
