@@ -37,7 +37,7 @@ const initialCostNegative = (cost) => {
 console.log(initialCostNegative(-100000));
 
 // Create variance for initial cost
-const initialCost = -100000;
+const initialCost = -50000;
 
 // Create Discount Rate
 // const discountRate = 0.045;
@@ -88,3 +88,6 @@ console.log(npvFormula(projectRevenue, projectCost));
 // console.log(npv(initialCost, discountedCashFlow(totalProfit(projectRevenue, projectCost), npvDenominator(discountRate, period))));
 
 // Need to add metrics for ICE eval
+const iceRating = (npv, initialCost, projectCost) => {
+
+};

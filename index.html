@@ -3,10 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Project Evaluation</title>
     <link href="style.css" type="text/css" rel="stylesheet">
 </head>
 <body>
+    <h1 class="header">Project Evaluation</h1>
+    <h2 class="subheader">Instructions:</h2>
+    <p class="instructions">Please fill out the form below to evaluate the project. The project will be evaluated based on the following criteria: <br>
+        <ul>
+            <li>Total Projected Revenue by Year</li>
+            <li>Total Projected Cost by Year</li>
+            <li>Initial Cost</li>
+            <li>Net Present Value</li>
+        </ul>
+    <br>
+    <h3 class="subheader">Project Information:</h3>
+    
+    <form action="project_evaluation.php" method="post">
+        <table>
+            <thead>
+                <tr class="tableHeader">
+                    <th class="glAccount">GL Account</th>
+                    <th>Year 0</th>
+                    <th>Year 1</th>
+                    <th>Year 2</th>
+                    <th>Year 3</th>
+                    <th>Year 4</th>
+                    <th>Year 5</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <label>Initial Expense</label>
+                </td>
+                <td>
+                    <input type="number" id="initialCost" placeholder="50,000" required>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Projected Revenue</label>
+                </td>
+                <td>
+                </td>
+                <td>
+                    <input type="number" id="revYear1" placeholder="30,000" required>
+                </td>
+                <td>
+                    <input type="number" id="revYear2" placeholder="30,000" required>
+                </td>
+                <td>
+                    <input type="number" id="revYear3" placeholder="30,000" required>
+                </td>
+                <td>
+                    <input type="number" id="revYear4" placeholder="30,000" required>
+                </td>
+                <td>
+                    <input type="number" id="revYear5" placeholder="30,000" required>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <label>Projected Revenue</label>
+                </td>
+                <td>
+                </td>
+                <td>
+                    <input type="number" id="costYear1" placeholder="-15,000" required>
+                </td>
+                <td>
+                    <input type="number" id="costYear2" placeholder="-15,000" required>
+                </td>
+                <td>
+                    <input type="number" id="costYear3" placeholder="-15,000" required>
+                </td>
+                <td>
+                    <input type="number" id="costYear4" placeholder="-15,000" required>
+                </td>
+                <td>
+                    <input type="number" id="costYear5" placeholder="-15,000" required>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+        <br>
+        <input type="submit" id="submit" value="Submit">
+        <br>
+    <h3>Project Rating:</h3>
     
 </body>
 </html>
