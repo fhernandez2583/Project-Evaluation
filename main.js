@@ -7,10 +7,12 @@ const initialCost = -100000;
 // const period = 5;
 
 // Table arrays
+// Find a check to always make cost negative and revenue positive
 const projectRevenue = [30000, 30000, 30000, 30000, 30000];
 const projectCost = [-15000, -15000, -15000, -15000, -15000];
 
-const totalProfit = (arr1, arr2) => {
+// NPV Formula
+const npvFormula = (arr1, arr2) => {
     let sum = [];
     let discountRate = 0.045;
     let period = [1, 2, 3, 4, 5];
@@ -27,7 +29,7 @@ const totalProfit = (arr1, arr2) => {
         return accumulator + currentValue
       }, 0) + initialCost;
 };
-console.log(totalProfit(projectRevenue, projectCost));
+console.log(npvFormula(projectRevenue, projectCost));
 
 // Create NPV Denominator
 // const npvDenominator = (discountRate, period) => {
@@ -47,3 +49,5 @@ console.log(totalProfit(projectRevenue, projectCost));
 //     return initialCost + discountedCashFlow;
 // }
 // console.log(npv(initialCost, discountedCashFlow(totalProfit(projectRevenue, projectCost), npvDenominator(discountRate, period))));
+
+// Need to add metrics for ICE eval
