@@ -15,3 +15,4 @@ The evaluation will have the user input cashflows for a project to receive the N
   * Initial expense to start the project
   * Discount rate or WACC
   * Reinvest rate of 2% from a treasury bond
+
