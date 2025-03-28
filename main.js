@@ -11,7 +11,7 @@ const revenuePos = (arr) => {
   }
   return checkedArr;
 };
-console.log(revenuePos([-10000, -10000, 5000, -5000, -2000]));
+// console.log(revenuePos([-10000, -10000, 5000, -5000, -2000]));
 
 // Rename function to projectCost
 const costNegative = (arr) => {
@@ -25,7 +25,7 @@ const costNegative = (arr) => {
   }
   return checkedArr;
 };
-console.log(costNegative([10000, -10000, 5000, 5000, -2000]));
+// console.log(costNegative([10000, -10000, 5000, 5000, -2000]));
 
 // Rename function to initialCost
 const initialCostNegative = (cost) => {
@@ -35,7 +35,7 @@ const initialCostNegative = (cost) => {
     return cost;
   }
 };
-console.log(initialCostNegative(-100000));
+// console.log(initialCostNegative(-100000));
 
 // Create variance for initial cost
 const initialCost = -50000;
@@ -71,23 +71,30 @@ const npvFormula = (arr1, arr2) => {
 };
 console.log(npvFormula(projectRevenue, projectCost));
 
-// Create NPV Denominator
-// const npvDenominator = (discountRate, period) => {
-//     return Math.pow((1 + discountRate), period);
-// }
-// console.log(npvDenominator(discountRate, period));
+// Modified IRR Formula added
+const mIrrFormula = (arr1, arr2) => {
+  let sum = [];
+  let reinvestRate = 0.02;
+  let period = [1, 2, 3, 4, 5];
 
-// Create Discounted amount
-// const discountedCashFlow = (totalProfit, npvDenominator) => {
-//     return totalProfit / npvDenominator;
-// }
-// console.log(discountedCashFlow(totalProfit(projectRevenue, projectCost), npvDenominator(discountRate, period)));
+  for (let i = 0; i < Math.max(arr1.length, arr2.length); i++) {
+    sum.push(arr1[i] + arr2[i]);
+  }
 
-// Create NPV function
-// const npv = (initialCost, discountedCashFlow) => {
-//     return initialCost + discountedCashFlow;
-// }
-// console.log(npv(initialCost, discountedCashFlow(totalProfit(projectRevenue, projectCost), npvDenominator(discountRate, period))));
+  let = sumOfReinvest = [];
 
-// Need to add metrics for ICE eval
-const iceRating = (npv, initialCost, projectCost) => {};
+  for (let i = 0; i < Math.max(sum.length - 1, period.length - 1); i++) {
+    sumOfReinvest.push(sum[i] * Math.pow(1 + reinvestRate, period[i]));
+  }
+  
+  sumOfReinvest.push(sum.pop());
+  sumOfReinvest = (
+    sumOfReinvest.reduce((accumulator, currentValue) => {
+      return accumulator + currentValue;
+    }, 0) / (initialCost * -1)) ;
+  
+let expValue = sumOfReinvest ** (1/5);
+
+  return expValue - 1;
+};
+console.log(mIrrFormula(projectRevenue, projectCost));
