@@ -1,24 +1,68 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: lightblue;
+    background-color: rgb(253, 249, 249);
     padding: 2em;
 }
 
-table, th, td {
-    border: 0.0625em solid black;
+.centerTable {
+    margin: 0 auto;
+}
+
+/* table, th, td {
+    border: 0.0625em;
     width: auto;
-    background-color: white;
+} */
+
+h1 {
+    color: #009879;
+    text-align: center;
 }
 
 #submit {
-    float: right;
-    margin-right: -15em;
+    float: left;
 }
 
-th.glAccount {
-    width: 100%;
+th.glAccount, th {
+    text-align: center;
 }
 
 input, td {
     text-align: right;
+}
+
+.projectTable {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.projectTable thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+
+.projectTable th, td {
+    padding: 12px 15px;
+}
+
+.projectTable tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.projectTable tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.projectTable tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.projectTable tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
 }

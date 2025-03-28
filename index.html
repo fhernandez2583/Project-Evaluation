@@ -11,16 +11,16 @@
     <h2 class="subheader">Instructions:</h2>
     <p class="instructions">Please fill out the form below to evaluate the project. The project will be evaluated based on the following criteria: <br>
         <ul>
-            <li>Total Projected Revenue by Year</li>
-            <li>Total Projected Cost by Year</li>
-            <li>Initial Cost</li>
-            <li>Net Present Value</li>
+            <li>Year Over Year Revenue</li>
+            <li>Year Over Year Expense</li>
+            <li>Initial Expense</li>
+            <li>Net Present Value of Project</li>
         </ul>
     <br>
     <h3 class="subheader">Project Information:</h3>
     
     <form action="project_evaluation.php" method="post">
-        <table>
+        <table class="projectTable" id="centerTable">
             <thead>
                 <tr class="tableHeader">
                     <th class="glAccount">GL Account</th>
@@ -98,8 +98,9 @@
             </tr>
         </tbody>
         </table>
-        <br>
+
         <input type="submit" id="submit" value="Submit">
+        <br>
         <br>
     <h3>Project Rating:</h3>
     
