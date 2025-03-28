@@ -16,3 +16,9 @@ The evaluation will have the user input cashflows for a project to receive the N
   * Discount rate or WACC
   * Reinvest rate of 2% from a treasury bond
 
+## Validating Data
+
+* When validating the NPV in excel use the put the cashflow data in the NPV formula then subtract the initial expense
+    * NPV(cashflow by years) - Initial Investment
+* The formula for the Modified IRR is
+    * MIRR(cashflow by years, Discount rate or WACC, treasury bond)
