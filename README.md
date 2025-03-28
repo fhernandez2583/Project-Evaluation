@@ -1,16 +1,17 @@
 # Project-Evaluation
 
-The project will have the user input cashflows for a project and it will receive a ICE rating
+The evaluation will have the user input cashflows for a project to receive the NPV and MIRR
 
-## The ICE rating is:
+## The rating is taking into account the NPV and MIRR the calcuate the rating:
 
-* I - for impact it will have on the company
-  * NPV will be used to assess the impact
-* C - for cost to implement the project
-  * The year over year expenses will be cost
-* E - for the effort to complete the project
-  * Initial cost will the effort required to complete
-
-## The ICE Metrics
-
-* 
+* NPV will be calculated:
+  * By using the cash flow of project revenue and expense
+  * Initial expense to start the project
+  * Discount rate or WACC (weighted average cost of capital)
+    * If no WACC the discount rate of 4.5% will be used
+      
+* MIRR will be calulated:
+  * By using the cash flow of project revenue and expense
+  * Initial expense to start the project
+  * Discount rate or WACC
+  * Reinvest rate of 2% from a treasury bond
