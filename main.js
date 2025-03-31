@@ -10,8 +10,8 @@ document.getElementById("submit").onclick = function () {
   projectCost = [parseInt(document.getElementById("costYear1").value), parseInt(document.getElementById("costYear2").value), parseInt(document.getElementById("costYear3").value), parseInt(document.getElementById("costYear4").value), parseInt(document.getElementById("costYear5").value)];
   initialCost = parseInt(document.getElementById("initialCost").value);
 
-  document.getElementById("npvResults").textContent = `NPV is: ${npvFormula(projectRevenue, projectCost)}`;
-  document.getElementById("mIrrResults").textContent = `Modified IRR is: ${mIrrFormula(projectRevenue, projectCost)}`;
+  document.getElementById("npvResults").textContent = `NPV is: ${parseFloat(npvFormula(projectRevenue, projectCost)).toLocaleString()}`;
+  document.getElementById("mIrrResults").textContent = `Modified IRR is: ${(mIrrFormula(projectRevenue, projectCost) * 100).toFixed(2)}%`;
 };
 
 // NPV Formula
@@ -32,7 +32,7 @@ const npvFormula = (a, b) => {
   return (sumOfDiscount =
     sumOfDiscount.reduce((accumulator, currentValue) => {
       return accumulator + currentValue;
-    }, 0) + initialCost);
+    }, 0) + initialCost).toFixed(2);
 };
 
 // Modified IRR Formula added
